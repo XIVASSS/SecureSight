@@ -11,10 +11,26 @@ export default function Dashboard() {
   const [currentTime, setCurrentTime] = useState(new Date());
 
   // Fetch cameras
-  const { data: cameras = [], isLoading: camerasLoading } = useQuery<Camera[]>({
-    queryKey: ["/api/cameras"],
-  });
+  // const { data: cameras = [], isLoading: camerasLoading } = useQuery<Camera[]>({
+  //   queryKey: ["/api/cameras"],
+  // });
+  const cameras = [{
+    id: 1,
+    name: "camera 1",
+    location: "Loaction 1",
+  },{
+    id: 2,
+    name: "camera 2",
+    location: "Loaction 2",
+  },
+  {
+    id: 3,
+    name: "camera 3",
+    location: "Loaction 3",
+  }
+] 
 
+const camerasLoading = false;
   // Fetch unresolved incidents
   const { data: incidents = [], isLoading: incidentsLoading } = useQuery<IncidentWithCamera[]>({
     queryKey: ["/api/incidents", "resolved=false"],
