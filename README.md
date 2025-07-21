@@ -1,3 +1,3 @@
 # SecureSight
-A cctv monitoring system
+A cctv monitoring system.
 
